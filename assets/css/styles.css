@@ -219,7 +219,16 @@ img {
 .home__blob-img {
   width: 360px;
 }
+/* Add the new code here */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
 
+.enthusiast {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px; /* Adjust this to your preferred size */
+  font-weight: 700; /* This makes the text bold */
+  color: #555;
+
+}
 /*BUTTONS*/
 .button {
   display: inline-block;
@@ -282,15 +291,15 @@ img {
   align-items: center;
 }
 .skills__bar {
-  position: absolute;
+  /* position: absolute;
   left: 0;
   bottom: 0;
   background-color: var(--first-color);
   height: 0.25rem;
   border-radius: 0.5rem;
-  z-index: var(--z-back);
+  z-index: var(--z-back); */
 }
-.skills__html {
+/* .skills__html {
   width: 95%;
 }
 .skills__css {
@@ -304,7 +313,7 @@ img {
 }
 .skills__img {
   border-radius: 0.5rem;
-}
+} */
 
 /* ===== WORK =====*/
 .work__container {
@@ -484,3 +493,5 @@ img {
     width: 450px;
   }
 }
+
+
