@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
 
         <meta charset="UTF-8">
@@ -11,7 +12,15 @@
         <!-- =====BOX ICONS===== -->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-        <title>Portfolio website complete</title>
+        <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function(){
+                emailjs.init("LOlQ6MxXKfD0jD-UM");
+            })();
+        </script>
+        
+</script> -->
+
     </head>
     <body>
         <!--===== HEADER =====-->
@@ -85,106 +94,154 @@
             <!--===== SKILLS =====-->
             <section class="skills section" id="skills">
                 <h2 class="section-title">Skills</h2>
-                    <!-- <center><div>              
-                        <img src="assets/img/work3.jpg" alt="" class="skills__img">
-                    </div></center> -->
+            
                 <div class="skills__container bd-grid">          
-                    <div>
-                        <h2 class="skills__subtitle">Profesional Skills</h2>
-                        <p class="skills__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit optio id vero amet, alias architecto consectetur error eum eaque sit.</p>
+                    <!-- Left Column -->
+                    <div class="skills__column">
+                        <h2 class="skills__subtitle">Professional Skills</h2>
+                        <!-- <p class="skills__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit optio id vero amet, alias architecto consectetur error eum eaque sit.</p> -->
                         <div class="skills__data">
                             <div class="skills__names">
                                 <i class='bx bxl-python skills__icon'></i>
-                                <span class="skills__name">HTML5</span>
+                                <span class="skills__name">Languages - PYTHON,R</span>
                             </div>
-                            <div class="skills__bar skills__html">
-
-                            </div>
-                            <!-- <div>
-                                <span class="skills__percentage">95%</span>
-                            </div> -->
+                            <div class="skills__bar skills__html"></div>
                         </div>
                         <div class="skills__data">
                             <div class="skills__names">
                                 <i class='bx bxl skills__icon'></i>
-                                <span class="skills__name">R</span>
+                                <span class="skills__name">Database - SQL, NOSQL[MongoDB]</span>
                             </div>
-                            <div class="skills__bar skills__css">
-                                
-                            </div>
-                            <!-- <div>
-                                <span class="skills__percentage">85%</span>
-                            </div> -->
+                            <div class="skills__bar skills__css"></div>
                         </div>
                         <div class="skills__data">
                             <div class="skills__names">
-                                <i class='bx bxl-javascript skills__icon' ></i>
-                                <span class="skills__name">JAVASCRIPT</span>
+                                <i class='bx bxl skills__icon'></i>
+                                <span class="skills__name">Data Analysis - NUMPY, PANDAS, MATPLOTLIB, SEABORN</span>
                             </div>
-                            <div class="skills__bar skills__js">
-                                
-                            </div>
-                            <!-- <div>
-                                <span class="skills__percentage">65%</span>
-                            </div> -->
+                            <div class="skills__bar skills__js"></div>
                         </div>
                         <div class="skills__data">
                             <div class="skills__names">
-                                <i class='bx bxs-paint skills__icon'></i>
-                                <span class="skills__name">UX/UI</span>
+                                <i class='bx bxs skills__icon'></i>
+                                <span class="skills__name">Data Visualizaton - MS EXCEL, POWER-BI, TABLEAU</span>
                             </div>
-                            <div class="skills__bar skills__ux">
-                                
+                            <div class="skills__bar skills__ux"></div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxs skills__icon'></i>
+                                <span class="skills__name">Version Control - GIT</span>
                             </div>
-                            <!-- <div>
-                                <span class="skills__percentage">85%</span>
-                            </div> -->
+                            <div class="skills__bar skills__ux"></div>    
                         </div>
                     </div>
-                    
-
+            
+                    <!-- Right Column -->
+                    <div class="skills__column">
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl skills__icon'></i>
+                                <span class="skills__name">ML - Scikit-Learn, DL - Tensorflow, Pytorch</span>
+                            </div>
+                            <div class="skills__bar skills__ux"></div>    
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl skills__icon'></i>
+                                <span class="skills__name">Cloud - AWS</span>
+                            </div>
+                            <div class="skills__bar skills__ux"></div>    
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl skills__icon'></i>
+                                <span class="skills__name">FLASK</span>
+                            </div>
+                            <div class="skills__bar skills__ux"></div>    
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl skills__icon'></i>
+                                <span class="skills__name">DOCKER</span>
+                            </div>
+                            <div class="skills__bar skills__ux"></div>    
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl skills__icon'></i>
+                                <span class="skills__name">BENTOML</span>
+                            </div>
+                            <div class="skills__bar skills__ux"></div>    
+                        </div>
+                    </div>
                 </div>
             </section>
+            
 
             <!--===== WORK =====-->
             <section class="work section" id="work">
                 <h2 class="section-title">Work</h2>
-
+            
                 <div class="work__container bd-grid">
-                    <a href="" class="work__img">
-                        <img src="assets/img/work1.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work2.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work3.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work4.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work5.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work6.jpg" alt="">
-                    </a>
+                    <div class="work__item">
+                        <a href="https://github.com/HarishNandhan/Pneumothorax_Detection" class="work__img">
+                            <img src="assets/img/work1.png" alt="">
+                        </a>
+                        <p class="work__title">Pneumothorax Segmentation</p>
+                    </div>
+            
+                    <div class="work__item">
+                        <a href="https://github.com/HarishNandhan/BMI-from-face-images" class="work__img">
+                            <img src="assets/img/work2.jpg" alt="">
+                        </a>
+                        <p class="work__title">BMI from Facial Images</p>
+                    </div>
+            
+                    <div class="work__item">
+                        <a href="https://github.com/HarishNandhan/dlhealthcareproject" class="work__img">
+                            <img src="assets/img/work3.jpg" alt="">
+                        </a>
+                        <p class="work__title">Pneumonia Classification</p>
+                    </div>
+            
+                    <div class="work__item">
+                        <a href="https://github.com/HarishNandhan/Medical_chatbot_using_LLAMA2" class="work__img">
+                            <img src="assets/img/work4.jpg" alt="">
+                        </a>
+                        <p class="work__title">Medical Chatbot using LLAMA 2</p>
+                    </div>
+            
+                    <div class="work__item">
+                        <a href="https://github.com/HarishNandhan/Studentperformancepredictor" class="work__img">
+                            <img src="assets/img/work5.png" alt="">
+                        </a>
+                        <p class="work__title">Student Performance Predictor</p>
+                    </div>
+            
+                    <div class="work__item">
+                        <a href="https://github.com/HarishNandhan/Image-GenX---Text-to-Video-Model-using-Transformers" class="work__img">
+                            <img src="assets/img/work6.jpg" alt="">
+                        </a>
+                        <p class="work__title">Text to Video model - EduAI</p>
+                    </div>
                 </div>
             </section>
+            
 
             <!--===== CONTACT =====-->
             <section class="contact section" id="contact">
                 <h2 class="section-title">Contact</h2>
-
                 <div class="contact__container bd-grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                        <input type="button" value="Enviar" class="contact__button button">
-                    </form>
+                    <form id="contact-form" class="contact__form">
+                        <input type="text" name="from_name" placeholder="Name" class="contact__input" required>
+                        <input type="email" name="reply_to" placeholder="Email" class="contact__input" required>
+                        <textarea name="message" cols="0" rows="10" placeholder="Message" class="contact__input" required></textarea>
+                        <input type="submit" value="Send" class="contact__button button">
+                    </form>                                        
                 </div>
             </section>
+            
         </main>
 
         <!--===== FOOTER =====-->

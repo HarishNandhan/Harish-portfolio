@@ -51,6 +51,27 @@ const sr = ScrollReveal({
 //     reset: true
 });
 
+/*===== CONTACT ME =====*/
+emailjs.init("LOlQ6MxXKfD0jD-UM"); // Replace with your actual User ID
+
+// Handle the form submission
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+    
+    console.log(new FormData(this)); // Log the form data
+    
+    emailjs.sendForm('service_0m79jq7', 'template_qnuxm3d', this)
+    .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('Your message has been sent successfully!');
+    }, function(error) {
+        console.error('FAILED...', error);
+        alert('Failed to send the message. Please try again.');
+    });
+});
+
+
+
 sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
