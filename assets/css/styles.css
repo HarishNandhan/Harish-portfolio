@@ -344,7 +344,7 @@ img {
 /* ===== CONTACT =====*/
 .contact__input {
   background-color: var(--primary-bg-color);
-  color: var(--text-color);
+  color: rgb(6, 1, 1);
   width: 100%;
   font-size: var(--normal-font-size);
   font-weight: var(--font-semi);
