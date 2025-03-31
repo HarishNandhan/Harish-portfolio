@@ -451,6 +451,7 @@ img {
   .section-title {
     margin-bottom: var(--mb-6);
     color: rgb(1, 37, 12);
+    font-weight: bold;
   }
   .section-title::after {
     background-color: var(--accent-color);
@@ -502,6 +503,7 @@ img {
     font-size: 1rem; /* Adjust font size */
     font-weight: bold; /* Make the title bold */
     color:#0c010b; /* Adjust color as needed */
+    font-weight: bold;
 }
 }
 @media screen and (min-width: 992px) {
@@ -518,3 +520,12 @@ img {
 }
 
 
+.work__item {
+  text-align: center;
+}
+
+.work__item .home__social-icon {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
