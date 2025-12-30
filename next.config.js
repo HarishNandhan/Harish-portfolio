@@ -11,8 +11,8 @@ const nextConfig = {
       },
     ],
   },
-  basePath: process.env.NODE_ENV === 'production' ? '' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '' : '',
+  basePath: '/Harish-portfolio',
+  assetPrefix: '/Harish-portfolio/',
 }
 
 module.exports = nextConfig
