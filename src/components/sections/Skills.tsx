@@ -7,7 +7,7 @@ import {
   Code, Database, Brain, BarChart3, Cloud, Server, 
   Cpu, GitBranch, Box, Workflow, LineChart, Search,
   Layers, Zap, Terminal, Globe, MessageSquare, Settings,
-  TrendingUp, FlaskConical, Users, Bot, ChartBar
+  TrendingUp, FlaskConical, Users, Bot, BarChart
 } from "lucide-react"
 
 // Icon mapping for skills
@@ -61,7 +61,7 @@ const iconMap: { [key: string]: any } = {
   pandas: "🐼",
   matplotlib: "📈",
   chart: BarChart3,
-  plotly: ChartBar,
+  plotly: BarChart,
   powerbi: "📊",
   tableau: "📉",
   excel: "📗",
