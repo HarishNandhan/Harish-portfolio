@@ -28,29 +28,44 @@ const buttonVariants = cva(
   }
 )
 
-interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+interface ButtonProps extends VariantProps<typeof buttonVariants> {
   href?: string
+  className?: string
+  children?: React.ReactNode
+  onClick?: () => void
+  disabled?: boolean
+  type?: "button" | "submit" | "reset"
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, href, children, ...props }, ref) => {
-    const Comp = href ? motion.a : motion.button
+  ({ className, variant, size, href, children, onClick, disabled, type = "button" }, ref) => {
+    if (href) {
+      return (
+        <motion.a
+          href={href}
+          target={href?.startsWith("http") ? "_blank" : undefined}
+          rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}
+          className={cn(buttonVariants({ variant, size, className }))}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          {children}
+        </motion.a>
+      )
+    }
 
     return (
-      <Comp
-        ref={ref as any}
-        href={href}
-        target={href?.startsWith("http") ? "_blank" : undefined}
-        rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}
+      <motion.button
+        ref={ref}
+        type={type}
+        onClick={onClick}
+        disabled={disabled}
         className={cn(buttonVariants({ variant, size, className }))}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        {...(props as any)}
       >
         {children}
-      </Comp>
+      </motion.button>
     )
   }
 )

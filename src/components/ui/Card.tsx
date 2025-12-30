@@ -4,13 +4,15 @@ import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
 import React from "react"
 
-interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+interface CardProps {
   hover?: boolean
   glow?: boolean
+  className?: string
+  children?: React.ReactNode
 }
 
 export const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  ({ className, hover = true, glow = false, children, ...props }, ref) => {
+  ({ className, hover = true, glow = false, children }, ref) => {
     return (
       <motion.div
         ref={ref}
@@ -22,7 +24,6 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
         )}
         whileHover={hover ? { y: -8, scale: 1.02 } : undefined}
         transition={{ duration: 0.3 }}
-        {...props}
       >
         {children}
       </motion.div>
