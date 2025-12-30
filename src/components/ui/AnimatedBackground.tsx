@@ -6,7 +6,7 @@ export function AnimatedBackground() {
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
       {/* Base gradient - light mode */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-[#0a0a0f] dark:via-[#0a0a0f] dark:to-[#0a0a0f]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-[#0f0f23] dark:via-[#1a1a3e] dark:to-[#0a0a0f]" />
       
       {/* Animated gradient orbs */}
       <motion.div
