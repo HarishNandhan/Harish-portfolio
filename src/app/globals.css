@@ -28,6 +28,7 @@ body {
   color: rgb(var(--foreground-rgb));
   font-family: 'Inter', sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
 }
 
 /* Light mode background */
