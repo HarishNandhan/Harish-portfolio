@@ -4,12 +4,15 @@ import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
 import React from "react"
 
-interface BadgeProps extends Omit<React.HTMLAttributes<HTMLSpanElement>, 'onAnimationStart' | 'onAnimationEnd'> {
+interface BadgeProps {
   variant?: "default" | "primary" | "secondary" | "outline"
+  className?: string
+  children?: React.ReactNode
+  onClick?: () => void
 }
 
 export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
-  ({ className, variant = "default", children, ...props }, ref) => {
+  ({ className, variant = "default", children, onClick }, ref) => {
     const variants = {
       default: "bg-white/10 text-gray-300 border-white/10",
       primary: "bg-purple-500/20 text-purple-300 border-purple-500/30",
@@ -26,7 +29,7 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
           className
         )}
         whileHover={{ scale: 1.05 }}
-        {...props}
+        onClick={onClick}
       >
         {children}
       </motion.span>
