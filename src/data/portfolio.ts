@@ -7,7 +7,7 @@ export const personalInfo = {
   email: "harishnandhan03@gmail.com",
   phone: "+1(720)261-7297",
   location: "Boulder, Colorado",
-  profileImage: "/images/harish.jpeg",
+  profileImage: "/Harish-portfolio/images/harish.jpeg",
   resumeUrl: "https://drive.google.com/drive/folders/1-w6Dw2vUQDHUfhARzHpOqoFhhplO-Kv6?usp=drive_link",
   social: {
     github: "https://github.com/HarishNandhan",
