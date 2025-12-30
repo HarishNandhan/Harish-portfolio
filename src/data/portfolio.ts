@@ -1,0 +1,436 @@
+export const personalInfo = {
+  name: "Harish Nandhan",
+  fullName: "Harish Nandhan Shanmugam",
+  role: "Data Scientist @ Ramsi",
+  tagline: "Transforming Data into Intelligence",
+  subtitle: "MS Data Science @ CU Boulder | Building Scalable ML Pipelines, RAG & GenAI Applications",
+  email: "harishnandhan03@gmail.com",
+  phone: "+1(720)261-7297",
+  location: "Boulder, Colorado",
+  profileImage: "/images/harish.jpeg",
+  resumeUrl: "https://drive.google.com/drive/folders/1-w6Dw2vUQDHUfhARzHpOqoFhhplO-Kv6?usp=drive_link",
+  social: {
+    github: "https://github.com/HarishNandhan",
+    linkedin: "https://www.linkedin.com/in/harish-nandhan-shanmugam-b548541b4/",
+    instagram: "https://www.instagram.com/_.harish03_/",
+    whatsapp: "https://wa.me/+17202617297",
+  }
+};
+
+export const aboutMe = `I turn messy data into clear insights, dashboards and decisions and when needed, I let a bit of AI do the heavy lifting 🤖📊
+
+I've worked across data analytics, data science, ML and data engineering, building things that actually get used (not just trained and forgotten).
+
+I like solving real business problems, automating boring work and making data understandable for humans 🙂`;
+
+export const skills = {
+  languages: [
+    { name: "Python", icon: "python" },
+    { name: "R", icon: "r" },
+    { name: "C++", icon: "cplusplus" },
+    { name: "SQL", icon: "database" },
+    { name: "JavaScript", icon: "javascript" },
+    { name: "HTML", icon: "html5" },
+    { name: "CSS", icon: "css3" },
+  ],
+  databases: [
+    { name: "MySQL", icon: "mysql" },
+    { name: "PostgreSQL", icon: "postgresql" },
+    { name: "MongoDB", icon: "mongodb" },
+    { name: "FAISS", icon: "database" },
+    { name: "Pinecone", icon: "database" },
+    { name: "Chroma", icon: "database" },
+    { name: "Weaviate", icon: "database" },
+    { name: "Snowflake", icon: "snowflake" },
+    { name: "BigQuery", icon: "google" },
+    { name: "Redshift", icon: "aws" },
+    { name: "Redis", icon: "redis" },
+  ],
+  dataEngineering: [
+    { name: "Apache Spark", icon: "apache" },
+    { name: "Apache Kafka", icon: "apache" },
+    { name: "Hadoop", icon: "hadoop" },
+    { name: "dbt", icon: "dbt" },
+    { name: "Databricks", icon: "databricks" },
+    { name: "Airflow", icon: "airflow" },
+    { name: "ETL Pipelines", icon: "workflow" },
+    { name: "Data Modeling", icon: "diagram" },
+  ],
+  mlGenAI: [
+    { name: "Scikit-Learn", icon: "scikitlearn" },
+    { name: "TensorFlow", icon: "tensorflow" },
+    { name: "PyTorch", icon: "pytorch" },
+    { name: "Keras", icon: "keras" },
+    { name: "LangChain", icon: "chain" },
+    { name: "LangGraph", icon: "graph" },
+    { name: "RAG", icon: "brain" },
+    { name: "Agentic AI", icon: "robot" },
+    { name: "LLM Fine-tuning", icon: "tune" },
+    { name: "Hugging Face", icon: "huggingface" },
+    { name: "CrewAI", icon: "users" },
+    { name: "Autogen", icon: "bot" },
+    { name: "N8N", icon: "workflow" },
+  ],
+  cloudDevops: [
+    { name: "AWS", icon: "aws" },
+    { name: "Azure", icon: "azure" },
+    { name: "GCP", icon: "google" },
+    { name: "Docker", icon: "docker" },
+    { name: "Kubernetes", icon: "kubernetes" },
+    { name: "Jenkins", icon: "jenkins" },
+    { name: "MLOps", icon: "mlops" },
+    { name: "CI/CD", icon: "cicd" },
+  ],
+  frameworks: [
+    { name: "Flask", icon: "flask" },
+    { name: "FastAPI", icon: "fastapi" },
+    { name: "REST APIs", icon: "api" },
+    { name: "GraphQL", icon: "graphql" },
+    { name: "Streamlit", icon: "streamlit" },
+    { name: "MLFlow", icon: "mlflow" },
+  ],
+  analytics: [
+    { name: "NumPy", icon: "numpy" },
+    { name: "Pandas", icon: "pandas" },
+    { name: "Matplotlib", icon: "matplotlib" },
+    { name: "Seaborn", icon: "chart" },
+    { name: "Plotly", icon: "plotly" },
+    { name: "Power BI", icon: "powerbi" },
+    { name: "Tableau", icon: "tableau" },
+    { name: "Excel", icon: "excel" },
+  ],
+  analyticalSkills: [
+    { name: "EDA", icon: "search" },
+    { name: "A/B Testing", icon: "split" },
+    { name: "Hypothesis Testing", icon: "flask" },
+    { name: "Feature Engineering", icon: "cog" },
+    { name: "Predictive Analytics", icon: "trendingup" },
+    { name: "NL2SQL", icon: "database" },
+    { name: "Prompt Engineering", icon: "message" },
+  ],
+};
+
+export const projects = [
+  // Data Engineering Projects
+  {
+    id: 1,
+    title: "Supply Chain Analytics Platform",
+    description: "Real-time supply chain monitoring and ML-powered delivery prediction system. End-to-end data pipeline extracting shipment data from Google Sheets, processing through Kafka and MongoDB, transforming with dbt, storing in BigQuery.",
+    impact: "Complete streaming pipeline with ML-powered delivery predictions",
+    techStack: ["Kafka", "MongoDB", "dbt", "BigQuery", "Streamlit", "Python"],
+    github: "https://github.com/HarishNandhan/supply_chain_service",
+    demo: null,
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
+    category: "Data Engineering",
+    featured: true,
+  },
+  {
+    id: 2,
+    title: "SentiStream - Real-time Sentiment Analyzer",
+    description: "Real-time sentiment analysis streaming pipeline that processes and analyzes text data for sentiment classification at scale.",
+    impact: "Live sentiment monitoring and analysis",
+    techStack: ["Python", "Kafka", "NLP", "Streaming", "ML"],
+    github: "https://github.com/HarishNandhan/Senti_Stream",
+    demo: null,
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    category: "Data Engineering",
+    featured: true,
+  },
+  {
+    id: 3,
+    title: "RedFlag Relay - Fraud Detection",
+    description: "Lightweight real-time fraud detection and alerting prototype using Kafka, MongoDB, and Python. Streaming pipeline that produces synthetic transactions, evaluates them with fraud rules, and sends email alerts.",
+    impact: "Real-time fraud detection with automated alerting",
+    techStack: ["Kafka", "MongoDB", "Python", "Streaming", "Email Alerts"],
+    github: "https://github.com/HarishNandhan/Redflag_Relay",
+    demo: null,
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80",
+    category: "Data Engineering",
+    featured: true,
+  },
+  {
+    id: 4,
+    title: "Data Science Learning Repository",
+    description: "Comprehensive collection of my learnings and implementations in Data Science and Analytics",
+    impact: "Structured knowledge base for DS concepts",
+    techStack: ["Python", "Pandas", "NumPy", "Scikit-Learn"],
+    github: "https://github.com/HarishNandhan/Data_Science_Preparation",
+    demo: null,
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
+    category: "Data Engineering",
+    featured: false,
+  },
+  // Data Analytics Projects
+  {
+    id: 5,
+    title: "Denver Airport Workload Analysis",
+    description: "Task Insights and Workload Overview Analysis for Denver International Airport",
+    impact: "Optimized task allocation and resource planning",
+    techStack: ["Python", "Data Analysis", "Visualization", "Power BI"],
+    github: "https://github.com/HarishNandhan/Task-Insights-and-Workload-Overview-Analysis-for-DEN",
+    demo: null,
+    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80",
+    category: "Data Analytics",
+    featured: true,
+  },
+  {
+    id: 6,
+    title: "Atliq Hardware Analytics",
+    description: "Sales & Finance Analytics Reports for Atliq Hardware",
+    impact: "Data-driven insights for business decisions",
+    techStack: ["Excel", "Power BI", "Data Analysis"],
+    github: "https://github.com/HarishNandhan/Atliq-Hardware-Sales-Finance-Analytics-Reports",
+    demo: null,
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    category: "Data Analytics",
+    featured: true,
+  },
+  // LLM-RAG-GenAI Projects
+  {
+    id: 7,
+    title: "SQL-LLM: Voice-Driven SQL Assistant",
+    description: "Intelligent voice-powered assistant for querying SQL databases using natural language. Speak your question, and the app transcribes speech, generates SQL using LLM, executes it, and displays results with automatic visualizations.",
+    impact: "Natural language to SQL with voice interface",
+    techStack: ["Python", "LLM", "Speech Recognition", "SQL", "Visualization"],
+    github: "https://github.com/HarishNandhan/SQL-LLM",
+    demo: null,
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
+    category: "LLM-RAG-GenAI",
+    featured: true,
+  },
+  {
+    id: 8,
+    title: "AI Medical Diagnostics System",
+    description: "Intelligent medical diagnostics assistant powered by EuriAI and LangGraph that analyzes symptoms and provides preliminary diagnostic suggestions with treatment recommendations.",
+    impact: "AI-powered preliminary medical diagnosis",
+    techStack: ["Python", "LangGraph", "EuriAI", "LLM", "Healthcare"],
+    github: "https://github.com/HarishNandhan/AI_medical_diagnostic_system",
+    demo: null,
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
+    category: "LLM-RAG-GenAI",
+    featured: true,
+  },
+  {
+    id: 9,
+    title: "PDF Knowledge Extraction RAG Bot",
+    description: "Powerful RAG chatbot for uploading PDF documents and asking questions about their content. Built with Streamlit, FAISS for vector search, and EURI API for embeddings and chat completions.",
+    impact: "Intelligent document Q&A with RAG",
+    techStack: ["Python", "RAG", "FAISS", "Streamlit", "LLM"],
+    github: "https://github.com/HarishNandhan/RAG_chat_with_PDF",
+    demo: null,
+    image: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=800&q=80",
+    category: "LLM-RAG-GenAI",
+    featured: true,
+  },
+  {
+    id: 10,
+    title: "LLM Benchmark Studio",
+    description: "Performance comparison and benchmarking analysis of various Large Language Models",
+    impact: "Systematic evaluation framework for LLM selection",
+    techStack: ["Python", "LLMs", "Benchmarking", "Analytics"],
+    github: "https://github.com/HarishNandhan/benchmarkstudio",
+    demo: null,
+    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80",
+    category: "LLM-RAG-GenAI",
+    featured: true,
+  },
+  {
+    id: 11,
+    title: "Medical Chatbot - LLAMA 2",
+    description: "AI-powered medical chatbot using LLAMA 2 for healthcare queries",
+    impact: "Accessible medical information assistant",
+    techStack: ["Python", "LLAMA 2", "LangChain", "RAG"],
+    github: "https://github.com/HarishNandhan/Medical_chatbot_using_LLAMA2",
+    demo: null,
+    image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=800&q=80",
+    category: "LLM-RAG-GenAI",
+    featured: false,
+  },
+  {
+    id: 12,
+    title: "EduAI - Text to Video",
+    description: "Transformer-based model for generating educational videos from text",
+    impact: "Automated educational content creation",
+    techStack: ["Python", "Transformers", "GenAI", "Video Generation"],
+    github: "https://github.com/HarishNandhan/Image-GenX---Text-to-Video-Model-using-Transformers",
+    demo: null,
+    image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80",
+    category: "LLM-RAG-GenAI",
+    featured: false,
+  },
+  // ML & DL Projects
+  {
+    id: 13,
+    title: "Pneumothorax Segmentation",
+    description: "Deep learning model for medical image segmentation to detect pneumothorax",
+    impact: "Automated detection for faster diagnosis",
+    techStack: ["Python", "TensorFlow", "Computer Vision", "U-Net"],
+    github: "https://github.com/HarishNandhan/Pneumothorax_Detection",
+    demo: null,
+    image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80",
+    category: "ML & DL",
+    featured: true,
+  },
+  {
+    id: 14,
+    title: "BMI from Facial Images",
+    description: "Predicting Body Mass Index using facial image analysis with deep learning",
+    impact: "Non-invasive health metric estimation",
+    techStack: ["Python", "Deep Learning", "Computer Vision", "CNN"],
+    github: "https://github.com/HarishNandhan/BMI-from-face-images",
+    demo: null,
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+    category: "ML & DL",
+    featured: true,
+  },
+  {
+    id: 15,
+    title: "Pneumonia Classification",
+    description: "Deep learning healthcare project for pneumonia detection from chest X-rays",
+    impact: "Improved diagnostic accuracy",
+    techStack: ["Python", "TensorFlow", "Medical Imaging", "CNN"],
+    github: "https://github.com/HarishNandhan/dlhealthcareproject",
+    demo: null,
+    image: "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=800&q=80",
+    category: "ML & DL",
+    featured: false,
+  },
+  {
+    id: 16,
+    title: "Student Performance Predictor",
+    description: "ML model to predict student academic performance based on various factors",
+    impact: "Early intervention for at-risk students",
+    techStack: ["Python", "Scikit-Learn", "Flask", "ML"],
+    github: "https://github.com/HarishNandhan/Studentperformancepredictor",
+    demo: null,
+    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80",
+    category: "ML & DL",
+    featured: false,
+  },
+];
+
+export const experience = [
+  {
+    id: 1,
+    role: "Data Science Intern",
+    company: "Ramsi (formerly PricingService.ai)",
+    location: "Boulder, CO",
+    period: "September 2025 – Present",
+    type: "Internship",
+    bullets: [
+      "Enhanced hotel revenue performance and reporting efficiency by 40% through a high-performance RAG-powered pricing engine, enabling revenue managers to query AWS-hosted hotel data conversationally and generate real-time insights",
+      "Designed scalable data pipelines and vector-based retrieval systems using FAISS, Google Gemini Flash 2.5 and LangChain - FastAPI integration for automated SQL generation, visualization, and summary generation",
+      "Boosted dynamic pricing accuracy and customer engagement by developing an LLM listing tool that leverages Perplexity search and Firecrawl web crawlers to detect high-impact hotel events",
+      "Engineered event summarization and integration pipelines that feed insights into the pricing engine, improving rate optimization and client hotel bookings by up to 25%"
+    ]
+  },
+  {
+    id: 2,
+    role: "AI Engineer Intern",
+    company: "beaconAI - Business and Consulting",
+    location: "Denver, CO",
+    period: "June 2025 – November 2025",
+    type: "Internship",
+    bullets: [
+      "Accelerated client acquisition by 4X through the development of an AI Implementation Intelligence platform using RAG architecture that delivers personalized consulting insights by scraping and analyzing lead websites",
+      "Improved solution relevance and user engagement by engineering an NLP-driven, context-aware recommendation engine tailored to client-specific operational challenges using FAISS, OpenAI/Llama LLMs, and web scraping pipelines",
+      "Optimized data flow and storage efficiency by integrating Kafka, Airflow, and AWS S3, ensuring seamless ingestion, transformation, and retrieval across distributed systems"
+    ]
+  },
+  {
+    id: 3,
+    role: "Data Science Intern",
+    company: "LetsGrowMore Edutech Startup",
+    location: "Jasra, Uttar Pradesh, India",
+    period: "June 2023 – July 2023",
+    type: "Internship",
+    bullets: [
+      "Constructed an Admission Predictor Module by analyzing scores in Physics, Chemistry, and Mathematics, streamlining the admission prediction process for Tamil Nadu Engineering Admissions",
+      "Orchestrated the extraction of datasets from AWS S3 and conducted comprehensive automated EDA using Summarytools and SweetViz, resulting in actionable insights which enhanced model performance by 25%",
+      "Built and Deployed a prediction model utilizing KNN and Random Forest Classifier, achieving 94.3% accuracy for college admissions predictions"
+    ]
+  },
+  {
+    id: 4,
+    role: "Data Science Engineering Intern",
+    company: "Plumb5 Analytics",
+    location: "Bengaluru, India",
+    period: "January 2023 – April 2023",
+    type: "Internship",
+    bullets: [
+      "Increased decision-making speed by 40% by building an interactive Power BI dashboard and a competitor insight system using Naive Bayes and Plotly",
+      "Helped the marketing team spot campaign issues and identify gaps versus key competitors like Amberity and Treasure Data",
+      "Doubled email campaign efficiency by designing a custom email template builder inspired by Beefree.io, reducing reliance on third-party tools and saving $133/month"
+    ]
+  }
+];
+
+export const education = [
+  {
+    id: 1,
+    degree: "Master of Science in Data Science",
+    institution: "University of Colorado Boulder",
+    location: "Boulder, CO, USA",
+    period: "August 2024 – May 2026",
+    gpa: "4.0",
+    description: "Focus on Machine Learning, AI Systems, and Data Engineering"
+  },
+  {
+    id: 2,
+    degree: "Bachelor of Science in Artificial Intelligence and Machine Learning",
+    institution: "Anna University",
+    location: "Chennai, India",
+    period: "August 2020 – May 2024",
+    gpa: "3.94",
+    description: "Specialized in AI/ML fundamentals, Deep Learning, and Computer Vision"
+  }
+];
+
+export const events = [
+  {
+    id: 1,
+    title: "Colorado Startup Week",
+    linkedinPostId: "7374337814618046464",
+    link: "https://www.linkedin.com/posts/harishnandhanshanmugam_csw2025-costartupweek-ai-activity-7374337814618046464-G5PS",
+    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80"
+  },
+  {
+    id: 2,
+    title: "Snowflake Data for Breakfast",
+    linkedinPostId: "7313774246210519040",
+    link: "https://www.linkedin.com/posts/harishnandhanshanmugam_snowflake-data-networking-activity-7313774246210519040-l2kI",
+    image: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&q=80"
+  },
+  {
+    id: 3,
+    title: "DSSA Hackathon - CU Boulder",
+    linkedinPostId: "7264176296463671297",
+    link: "https://www.linkedin.com/posts/harishnandhanshanmugam_hackathon-cu-activity-7264176296463671297-k477",
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80"
+  },
+  {
+    id: 4,
+    title: "AI & ML in Big Data Processing Conference",
+    linkedinPostId: "7098338071120658432",
+    link: "https://www.linkedin.com/posts/harishnandhanshanmugam_aiinnovation-machinelearning-airesearch-activity-7098338071120658432-So3l",
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80"
+  },
+  {
+    id: 5,
+    title: "RISC-V International Symposium - IIT Madras",
+    linkedinPostId: "7093954124353830912",
+    link: "https://www.linkedin.com/posts/harishnandhanshanmugam_riscv-digitalindia-semiconductor-activity-7093954124353830912-Afo-",
+    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80"
+  }
+];
+
+export const certifications = [];
+
+export const navItems = [
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
+  { name: "Experience", href: "#experience" },
+  { name: "Contact", href: "#contact" },
+];
