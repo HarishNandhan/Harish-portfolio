@@ -12,7 +12,7 @@ import { Footer } from "@/components/sections/Footer"
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Debug info */}
       <div className="fixed top-4 right-4 z-50 bg-red-500 text-white p-2 rounded text-sm">
         Portfolio Loaded ✓
@@ -27,6 +27,6 @@ export default function Home() {
       <Experience />
       <Contact />
       <Footer />
-    </main>
+    </div>
   )
 }
