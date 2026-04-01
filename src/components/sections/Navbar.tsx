@@ -106,6 +106,16 @@ export function Navbar() {
               )
             })}
           </div>
+
+          {/* Case Studies link */}
+          <motion.a
+            href="/Harish-portfolio/case-studies/"
+            className="rounded-full border border-slate-200/70 bg-white/75 px-4 py-2 text-sm font-medium text-slate-600 transition-colors hover:border-cyan-300/70 hover:text-cyan-700 dark:border-slate-700/70 dark:bg-slate-900/55 dark:text-slate-300 dark:hover:border-cyan-300/45 dark:hover:text-cyan-300"
+            whileHover={{ y: -1 }}
+            transition={navSpring}
+          >
+            Case Studies
+          </motion.a>
           
           {mounted && (
             <motion.button
@@ -180,6 +190,16 @@ export function Navbar() {
                   {item.name}
                 </motion.a>
               ))}
+              <motion.a
+                href="/Harish-portfolio/case-studies/"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: navItems.length * 0.06, duration: 0.3, ease: revealEase }}
+                onClick={() => setIsOpen(false)}
+                className="rounded-xl border border-cyan-300/50 px-3 py-2 text-base font-medium text-cyan-700 dark:border-cyan-400/30 dark:text-cyan-300"
+              >
+                Case Studies
+              </motion.a>
             </div>
           </motion.div>
         )}
