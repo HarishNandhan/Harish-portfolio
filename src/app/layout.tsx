@@ -1,10 +1,20 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Plus_Jakarta_Sans, Sora } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from 'react-hot-toast'
 
-const inter = Inter({ subsets: ['latin'] })
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+})
+
+const sora = Sora({
+  subsets: ['latin'],
+  variable: '--font-heading',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Harish Nandhan | Data Science & AI Engineer',
@@ -25,7 +35,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${plusJakarta.variable} ${sora.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
@@ -37,9 +47,10 @@ export default function RootLayout({
             position="bottom-right"
             toastOptions={{
               style: {
-                background: '#1a1a2e',
-                color: '#fff',
-                border: '1px solid rgba(255,255,255,0.1)',
+                background: 'rgba(8, 15, 28, 0.88)',
+                color: '#e2e8f0',
+                border: '1px solid rgba(148, 163, 184, 0.22)',
+                backdropFilter: 'blur(18px)',
               },
             }}
           />

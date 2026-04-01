@@ -6,87 +6,94 @@ import { SectionTitle } from "@/components/ui/SectionTitle"
 import { aboutMe, personalInfo } from "@/data/portfolio"
 import { MapPin, GraduationCap, Briefcase } from "lucide-react"
 
+const aboutEase: [number, number, number, number] = [0.22, 1, 0.36, 1]
+
 export function About() {
   return (
-    <section id="about" className="py-32 relative">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="about" className="relative py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-6">
         <SectionTitle
           title="About Me"
           subtitle="Get to know the person behind the code"
         />
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Image/Visual Side */}
+        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.78, ease: aboutEase }}
             className="relative"
           >
-            <div className="relative w-full aspect-square max-w-md mx-auto">
-              {/* Decorative background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-3xl blur-2xl" />
-              
-              {/* Main card */}
-              <div className="relative bg-white/80 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-3xl p-8 h-full flex flex-col justify-center">
-                <div className="text-center">
-                  {/* Profile Image */}
-                  <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-purple-500 to-pink-500 p-1">
-                    <div className="w-full h-full rounded-full overflow-hidden bg-white dark:bg-gray-900">
-                      <Image
-                        src={personalInfo.profileImage}
-                        alt={personalInfo.name}
-                        width={128}
-                        height={128}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+            <div className="glass-panel-strong interactive-lift relative mx-auto max-w-xl overflow-hidden rounded-[2rem] border border-slate-200/75 p-8 dark:border-slate-700/70 md:p-10">
+              <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-cyan-300/25 blur-2xl dark:bg-cyan-500/20" />
+
+              <div className="relative text-center">
+                <div className="mx-auto mb-6 h-32 w-32 rounded-full bg-gradient-to-br from-cyan-400 to-sky-500 p-[3px]">
+                  <div className="h-full w-full overflow-hidden rounded-full border border-white/45 bg-white dark:border-slate-700/75 dark:bg-slate-900">
+                    <Image
+                      src={personalInfo.profileImage}
+                      alt={personalInfo.name}
+                      width={128}
+                      height={128}
+                      className="h-full w-full object-cover"
+                    />
                   </div>
-                  
-                  <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">{personalInfo.fullName}</h3>
-                  <p className="text-purple-600 dark:text-purple-400 font-medium mb-6">{personalInfo.role}</p>
-                  
-                  <div className="space-y-3 text-left">
-                    <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                      <MapPin size={18} className="text-purple-500" />
-                      <span>{personalInfo.location}</span>
+                </div>
+
+                <h3 className="font-heading text-2xl font-semibold text-slate-900 dark:text-slate-100">
+                  {personalInfo.fullName}
+                </h3>
+                <p className="mt-2 text-sm font-semibold uppercase tracking-[0.14em] text-cyan-700 dark:text-cyan-300">
+                  {personalInfo.role}
+                </p>
+
+                <div className="mt-7 space-y-3 text-left">
+                  <div className="glass-panel flex items-center gap-3 rounded-xl border border-slate-200/70 p-3 dark:border-slate-700/65">
+                    <div className="rounded-lg bg-cyan-100 p-2 dark:bg-cyan-500/15">
+                      <MapPin size={16} className="text-cyan-700 dark:text-cyan-300" />
                     </div>
-                    <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                      <GraduationCap size={18} className="text-purple-500" />
-                      <span>MS Data Science @ CU Boulder</span>
+                    <span className="text-sm text-slate-600 dark:text-slate-300">{personalInfo.location}</span>
+                  </div>
+
+                  <div className="glass-panel flex items-center gap-3 rounded-xl border border-slate-200/70 p-3 dark:border-slate-700/65">
+                    <div className="rounded-lg bg-cyan-100 p-2 dark:bg-cyan-500/15">
+                      <GraduationCap size={16} className="text-cyan-700 dark:text-cyan-300" />
                     </div>
-                    <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                      <Briefcase size={18} className="text-purple-500" />
-                      <span>Seeking full time positions starting from May 2026</span>
+                    <span className="text-sm text-slate-600 dark:text-slate-300">MS Data Science @ CU Boulder</span>
+                  </div>
+
+                  <div className="glass-panel flex items-center gap-3 rounded-xl border border-slate-200/70 p-3 dark:border-slate-700/65">
+                    <div className="rounded-lg bg-cyan-100 p-2 dark:bg-cyan-500/15">
+                      <Briefcase size={16} className="text-cyan-700 dark:text-cyan-300" />
                     </div>
+                    <span className="text-sm text-slate-600 dark:text-slate-300">Seeking full time positions starting from May 2026</span>
                   </div>
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Content Side */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.78, ease: aboutEase }}
+            className="space-y-6"
           >
-            {/* About Text */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              className="bg-white/80 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-2xl p-8"
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.66, ease: aboutEase }}
+              className="glass-panel rounded-[1.75rem] border border-slate-200/70 p-8 dark:border-slate-700/65 md:p-10"
             >
-              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line">
+              <p className="whitespace-pre-line text-base leading-relaxed text-slate-700 dark:text-slate-300 md:text-lg">
                 {aboutMe}
               </p>
             </motion.div>
 
-            {/* Quick Stats */}
-            <div className="grid grid-cols-3 gap-4 mt-8">
+            <div className="grid grid-cols-3 gap-3 sm:gap-4">
               {[
                 { label: "Projects", value: "16+" },
                 { label: "Technologies", value: "30+" },
@@ -97,11 +104,13 @@ export function About() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="text-center p-4 bg-white/80 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-xl"
+                  transition={{ delay: index * 0.08, duration: 0.55, ease: aboutEase }}
+                  className="glass-panel interactive-lift rounded-2xl border border-slate-200/70 p-4 text-center dark:border-slate-700/65"
                 >
-                  <div className="text-3xl font-bold gradient-text">{stat.value}</div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400">{stat.label}</div>
+                  <div className="font-heading text-3xl font-semibold gradient-text">{stat.value}</div>
+                  <div className="mt-1 text-xs font-medium uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400 sm:text-sm">
+                    {stat.label}
+                  </div>
                 </motion.div>
               ))}
             </div>

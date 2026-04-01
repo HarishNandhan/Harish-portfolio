@@ -8,6 +8,7 @@ import { projects } from "@/data/portfolio"
 import { Github, ExternalLink } from "lucide-react"
 
 const categories = ["All", "Data Engineering", "Data Analytics", "LLM-RAG-GenAI", "ML & DL"]
+const projectsRevealEase: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
 export function Projects() {
   const [activeFilter, setActiveFilter] = useState("All")
@@ -17,114 +18,109 @@ export function Projects() {
   )
 
   return (
-    <section id="projects" className="py-32 relative">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="projects" className="relative py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-6">
         <SectionTitle
           title="Projects"
           subtitle="A showcase of my work in data science, ML, and AI"
         />
 
-        {/* Filter Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
+          transition={{ duration: 0.62, ease: projectsRevealEase }}
+          className="mb-12 flex justify-center"
         >
-          {categories.map((category) => (
-            <motion.button
-              key={category}
-              onClick={() => setActiveFilter(category)}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                activeFilter === category
-                  ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/25"
-                  : "bg-white dark:bg-white/5 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-white/10 hover:text-gray-900 dark:hover:text-white border border-gray-200 dark:border-white/10"
-              }`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {category}
-            </motion.button>
-          ))}
+          <div className="glass-panel flex max-w-full flex-wrap justify-center gap-2 rounded-2xl border border-slate-200/75 p-2 dark:border-slate-700/70">
+            {categories.map((category) => (
+              <motion.button
+                key={category}
+                onClick={() => setActiveFilter(category)}
+                className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 md:px-5 ${
+                  activeFilter === category
+                    ? "bg-slate-900 text-white shadow-[0_10px_24px_-14px_rgba(2,6,23,0.8)] dark:bg-cyan-400 dark:text-slate-950"
+                    : "text-slate-600 hover:bg-white hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800/85 dark:hover:text-slate-100"
+                }`}
+                whileHover={{ y: -1.5 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 300, damping: 24, mass: 0.7 }}
+              >
+                {category}
+              </motion.button>
+            ))}
+          </div>
         </motion.div>
 
-        {/* Projects Grid */}
-        <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div layout className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
                 layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
+                initial={{ opacity: 0, y: 18, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 14, scale: 0.98 }}
+                transition={{ duration: 0.42, delay: index * 0.035, ease: projectsRevealEase }}
                 whileHover={{ y: -8 }}
-                className="bg-white dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-2xl overflow-hidden hover:bg-gray-50 dark:hover:bg-white/10 hover:border-purple-300 dark:hover:border-purple-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10 group h-full flex flex-col"
+                whileTap={{ scale: 0.995 }}
+                className="glass-panel-strong interactive-lift group flex h-full flex-col overflow-hidden rounded-[1.7rem] border border-slate-200/75 dark:border-slate-700/70"
               >
-                {/* Project Image */}
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-52 overflow-hidden">
                   <Image
                     src={project.image}
                     alt={project.title}
                     width={400}
                     height={200}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/72 via-slate-950/20 to-transparent" />
                   
-                  {/* Category Badge */}
                   <div className="absolute top-3 right-3">
-                    <span className="px-3 py-1 rounded-full bg-purple-500/90 backdrop-blur-sm text-white text-xs font-medium">
+                    <span className="rounded-full border border-white/20 bg-slate-900/70 px-3 py-1 text-xs font-medium text-white backdrop-blur-md dark:bg-slate-800/75">
                       {project.category}
                     </span>
                   </div>
 
-                  {/* Title overlay on image */}
                   <div className="absolute bottom-3 left-3 right-3">
-                    <h3 className="text-lg font-semibold text-white drop-shadow-lg">
+                    <h3 className="font-heading text-lg font-semibold text-white drop-shadow-lg">
                       {project.title}
                     </h3>
                   </div>
                 </div>
 
-                {/* Content */}
-                <div className="flex-1 flex flex-col p-5">
-                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-3 flex-1 line-clamp-2">
+                <div className="flex flex-1 flex-col p-5">
+                  <p className="line-clamp-2 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                     {project.description}
                   </p>
 
-                  {/* Impact Statement */}
-                  <p className="text-purple-600 dark:text-purple-400 text-sm mb-4 italic">
+                  <p className="mt-3 text-sm italic text-cyan-700 dark:text-cyan-300">
                     💡 {project.impact}
                   </p>
 
-                  {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="mb-4 mt-4 flex flex-wrap gap-2">
                     {project.techStack.slice(0, 4).map((tech) => (
                       <span 
                         key={tech} 
-                        className="px-2 py-1 rounded-full bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-gray-400 text-xs border border-gray-200 dark:border-white/10"
+                        className="rounded-full border border-slate-200/75 bg-white/80 px-2 py-1 text-xs text-slate-600 dark:border-slate-600/70 dark:bg-slate-900/50 dark:text-slate-300"
                       >
                         {tech}
                       </span>
                     ))}
                     {project.techStack.length > 4 && (
-                      <span className="px-2 py-1 rounded-full bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-gray-400 text-xs border border-gray-200 dark:border-white/10">
+                      <span className="rounded-full border border-slate-200/75 bg-white/80 px-2 py-1 text-xs text-slate-600 dark:border-slate-600/70 dark:bg-slate-900/50 dark:text-slate-300">
                         +{project.techStack.length - 4}
                       </span>
                     )}
                   </div>
 
-                  {/* Links */}
-                  <div className="flex gap-3 pt-4 border-t border-gray-200 dark:border-white/10">
+                  <div className="flex gap-3 border-t border-slate-200/75 pt-4 dark:border-slate-700/65">
                     {project.github && (
                       <a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-white transition-colors"
+                        className="flex items-center gap-2 text-sm font-medium text-slate-500 transition-colors hover:text-cyan-700 dark:text-slate-400 dark:hover:text-cyan-300"
                       >
                         <Github size={16} />
                         Code
@@ -135,7 +131,7 @@ export function Projects() {
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-white transition-colors"
+                        className="flex items-center gap-2 text-sm font-medium text-slate-500 transition-colors hover:text-cyan-700 dark:text-slate-400 dark:hover:text-cyan-300"
                       >
                         <ExternalLink size={16} />
                         Demo

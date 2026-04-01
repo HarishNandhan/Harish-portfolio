@@ -5,20 +5,31 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { motion } from "framer-motion"
 import React from "react"
 
+const buttonSpring = {
+  type: "spring",
+  stiffness: 320,
+  damping: 24,
+  mass: 0.7,
+} as const
+
 const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-full font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-50 disabled:pointer-events-none",
+  "inline-flex items-center justify-center gap-2 rounded-full font-semibold tracking-wide transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent disabled:opacity-60 disabled:pointer-events-none",
   {
     variants: {
       variant: {
-        primary: "bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 shadow-lg hover:shadow-purple-500/25",
-        secondary: "bg-white/10 text-white border border-white/20 hover:bg-white/20 backdrop-blur-sm",
-        outline: "border-2 border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white",
-        ghost: "text-gray-300 hover:text-white hover:bg-white/10",
+        primary:
+          "bg-gradient-to-r from-slate-900 via-cyan-800 to-slate-900 text-white shadow-[0_14px_28px_-14px_rgba(14,116,144,0.72)] hover:-translate-y-0.5 hover:shadow-[0_20px_38px_-16px_rgba(8,47,73,0.75)] dark:from-cyan-500 dark:via-sky-500 dark:to-cyan-500 dark:text-slate-950",
+        secondary:
+          "border border-slate-300/75 dark:border-slate-500/40 bg-white/75 dark:bg-slate-900/52 text-slate-700 dark:text-slate-100 backdrop-blur-xl hover:-translate-y-0.5 hover:bg-white dark:hover:bg-slate-900/78 hover:border-cyan-300/70 dark:hover:border-cyan-300/45",
+        outline:
+          "border border-cyan-700/35 dark:border-cyan-300/45 bg-transparent text-cyan-900 dark:text-cyan-200 hover:-translate-y-0.5 hover:bg-cyan-700/10 dark:hover:bg-cyan-300/10",
+        ghost:
+          "text-slate-600 dark:text-slate-300 hover:bg-white/65 dark:hover:bg-slate-800/65 hover:text-slate-900 dark:hover:text-slate-100",
       },
       size: {
         sm: "px-4 py-2 text-sm",
-        md: "px-6 py-3 text-base",
-        lg: "px-8 py-4 text-lg",
+        md: "px-6 py-3 text-sm md:text-base",
+        lg: "px-8 py-3.5 text-base md:text-lg",
       },
     },
     defaultVariants: {
@@ -46,8 +57,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           target={href?.startsWith("http") ? "_blank" : undefined}
           rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}
           className={cn(buttonVariants({ variant, size, className }))}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          whileHover={{ y: -2, scale: 1.01 }}
+          whileTap={{ scale: 0.985 }}
+          transition={buttonSpring}
         >
           {children}
         </motion.a>
@@ -61,8 +73,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         onClick={onClick}
         disabled={disabled}
         className={cn(buttonVariants({ variant, size, className }))}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
+        whileHover={{ y: -2, scale: 1.01 }}
+        whileTap={{ scale: 0.985 }}
+        transition={buttonSpring}
       >
         {children}
       </motion.button>
