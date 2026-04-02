@@ -212,3 +212,9 @@ section {
     scroll-behavior: auto !important;
   }
 }
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -8;
+  }
+}
