@@ -3,7 +3,7 @@ export const personalInfo = {
   fullName: "Harish Nandhan Shanmugam",
   role: "Data Scientist @ Ramsi",
   tagline: "Transforming Data into Intelligence",
-  subtitle: "MS Data Science @ CU Boulder | Building Scalable ML Pipelines, RAG & GenAI Applications",
+  subtitle: "MS Data Science @ CU Boulder | Data Analytics and Engineering - Building Dashboards and Scalable ETL Pipelines",
   email: "harishnandhan03@gmail.com",
   phone: "+1(720)261-7297",
   location: "Boulder, Colorado",
