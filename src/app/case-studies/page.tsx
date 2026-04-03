@@ -3,6 +3,7 @@
 import { AnimatedBackground } from "@/components/ui/AnimatedBackground"
 import { CaseStudyGrid } from "@/components/sections/CaseStudyGrid"
 import { CaseStudiesNav } from "@/components/sections/CaseStudiesNav"
+import { NonprofitMission } from "@/components/case-studies/NonprofitMission"
 
 export default function CaseStudiesPage() {
   return (
@@ -10,6 +11,7 @@ export default function CaseStudiesPage() {
       <AnimatedBackground />
       <div className="relative z-10">
         <CaseStudiesNav />
+        <NonprofitMission />
         <CaseStudyGrid />
       </div>
     </div>

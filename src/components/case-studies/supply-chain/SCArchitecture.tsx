@@ -7,27 +7,22 @@ const ease: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
 const archNodes = [
   { layer: "EXTRACT", title: "Google Sheets", iconComp: FileSpreadsheet,
-    logo: "https://upload.wikimedia.org/wikipedia/commons/3/30/Google_Sheets_logo_%282014-2020%29.svg",
     pills: ["Shipment Records", "Incremental Row Processing", "Airflow Triggered"],
     accent: "border-emerald-400/40 dark:border-emerald-400/30", accentBg: "bg-emerald-500/10", accentText: "text-emerald-600 dark:text-emerald-400",
     note: "One row processed per pipeline run, tracking last processed index" },
   { layer: "STREAM", title: "Apache Kafka", iconComp: Radio,
-    logo: "https://upload.wikimedia.org/wikipedia/commons/0/05/Apache_kafka.svg",
     pills: ["Topic: supply_chain", "Event Buffering", "Fault Tolerant Queue"],
     accent: "border-slate-400/40 dark:border-slate-400/30", accentBg: "bg-slate-500/10", accentText: "text-slate-600 dark:text-slate-400",
     note: "Each record streamed through Kafka for reliable, observable ingestion" },
   { layer: "STAGE", title: "MongoDB Atlas", iconComp: Database,
-    logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg",
     pills: ["Nested JSON Storage", "Processing Status Tracking", "Stage: success"],
     accent: "border-emerald-400/40 dark:border-emerald-400/30", accentBg: "bg-emerald-500/10", accentText: "text-emerald-600 dark:text-emerald-400",
     note: "Raw event stored with status flag before loading to warehouse" },
   { layer: "LOAD", title: "Google BigQuery", iconComp: Cloud,
-    logo: "https://upload.wikimedia.org/wikipedia/commons/2/29/Google_BigQuery_Logo.png",
     pills: ["shipments_raw Table", "Partitioned by Date", "Columnar Storage"],
     accent: "border-blue-400/40 dark:border-blue-400/30", accentBg: "bg-blue-500/10", accentText: "text-blue-600 dark:text-blue-400",
     note: "Flattened records land in BigQuery, partitioned for fast analytics queries" },
   { layer: "TRANSFORM", title: "dbt", iconComp: GitBranch,
-    logo: "https://seeklogo.com/images/D/dbt-logo-500AB0BAA7-seeklogo.com.png",
     pills: ["stg_shipments View", "shipment_metrics Model", "40+ Engineered Features"],
     accent: "border-orange-400/40 dark:border-orange-400/30", accentBg: "bg-orange-500/10", accentText: "text-orange-600 dark:text-orange-400",
     note: "dbt builds temporal, interaction, and categorical features on top of raw data" },
@@ -36,7 +31,6 @@ const archNodes = [
     accent: "border-purple-400/40 dark:border-purple-400/30", accentBg: "bg-purple-500/10", accentText: "text-purple-600 dark:text-purple-400",
     note: "Model trained inside BigQuery scores each shipment without moving data" },
   { layer: "CONSUME", title: "Streamlit Analytics Dashboard", iconComp: BarChart3,
-    logo: "https://streamlit.io/images/brand/streamlit-logo-primary-colormark-darktext.png",
     pills: ["Admin KPI Portal", "Real-time Shipment Monitoring", "Delay Risk Flags"],
     accent: "border-red-400/40 dark:border-red-400/30", accentBg: "bg-red-500/10", accentText: "text-red-600 dark:text-red-400",
     note: "Operations team sees live delay predictions and shipment KPIs in one dashboard" },
@@ -132,14 +126,9 @@ function ArchNode({ node, index }: { node: any; index: number }) { // eslint-dis
       className={`glass-panel interactive-lift group relative w-full rounded-2xl border-2 p-5 ${node.accent}`}>
       <p className={`text-[10px] font-bold uppercase tracking-[0.18em] ${node.accentText}`}>{node.layer}</p>
       <div className="mt-2 flex items-center gap-3">
-        {node.logo ? (
-          <div className={`flex h-8 w-8 items-center justify-center rounded-lg ${node.accentBg}`}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={node.logo} alt={node.title} className="h-5 w-5 object-contain" onError={(e) => { (e.target as HTMLImageElement).style.display = "none" }} />
-          </div>
-        ) : IconComp ? (
+        {IconComp && (
           <div className={`flex h-8 w-8 items-center justify-center rounded-lg ${node.accentBg}`}><IconComp size={16} className={node.accentText} /></div>
-        ) : null}
+        )}
         <h4 className="font-heading text-base font-semibold text-[rgb(var(--text-1))]">{node.title}</h4>
       </div>
       <div className="mt-3 flex flex-wrap gap-1.5">

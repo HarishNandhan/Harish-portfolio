@@ -52,14 +52,14 @@ export function CaseStudiesNav() {
         {/* Back to portfolio */}
         <div className="flex items-center gap-4">
           <motion.a
-            href="/Harish-portfolio/"
+            href="/Harish-portfolio/case-studies/"
             className="flex items-center gap-2 rounded-full border border-slate-200/70 bg-white/75 px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:border-cyan-300/70 hover:text-cyan-700 dark:border-slate-700/70 dark:bg-slate-900/55 dark:text-slate-300 dark:hover:border-cyan-300/45 dark:hover:text-cyan-300"
             whileHover={{ y: -1 }}
             whileTap={{ scale: 0.97 }}
             transition={navSpring}
           >
             <ArrowLeft size={16} />
-            Portfolio
+            Work Portfolio
           </motion.a>
 
           <motion.span
