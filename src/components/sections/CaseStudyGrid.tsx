@@ -7,6 +7,8 @@ import { CaseStudyTile } from "@/components/ui/CaseStudyTile"
 const revealEase: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
 export function CaseStudyGrid() {
+  const liveCaseStudies = caseStudies.filter((study) => study.isLive !== false)
+
   return (
     <section className="relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
@@ -33,7 +35,7 @@ export function CaseStudyGrid() {
 
         {/* Tiles Grid */}
         <div className="grid gap-6 lg:grid-cols-2">
-          {caseStudies.map((study, index) => (
+          {liveCaseStudies.map((study, index) => (
             <CaseStudyTile
               key={study.id}
               id={study.id}
